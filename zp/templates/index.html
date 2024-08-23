@@ -20,5 +20,14 @@
     <h2>Noisy 3D Spheres</h2>
     <iframe src="{{ url_for('static', filename='noisy_plot.html') }}" style="border:none;" width="100%" height="800"></iframe>
     {% endif %}
+
+    {% if original_plot and noisy_plot %}
+    <h2>PCA 3D Spheres</h2>
+    <iframe src="{{ url_for('static', filename='pca_plot.html') }}" style="border:none;" width="100%" height="800"></iframe>
+
+    <h2>SVD 3D Spheres</h2>
+    <iframe src="{{ url_for('static', filename='svd_plot.html') }}" style="border:none;" width="100%" height="800"></iframe>
+    {% endif %}
+
 </body>
 </html>
