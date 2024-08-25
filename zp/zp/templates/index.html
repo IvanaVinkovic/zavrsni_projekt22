@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dimenzionalna Redukcija</title>
+</head>
+<body>
+    <h1>Dimenzionalna Redukcija Podataka</h1>
+    <form method="post">
+        <label for="n">Broj tačaka po kugli (n):</label>
+        <input type="number" id="n" name="n" value="300">
+        <br><br>
+        <label for="encoding_dim">Dimenzija latentnog prostora:</label>
+        <input type="number" id="encoding_dim" name="encoding_dim" value="3">
+        <br><br>
+        <input type="submit" value="Submit">
+    </form>
+    <h2>Vizualizacije</h2>
+    {% if original_plot %}
+        <h3>Originalni podaci sa šumom</h3>
+        <iframe src="{{ original_plot }}" width="100%" height="600"></iframe>
+    {% endif %}
+    
+    {% if pca_plot %}
+        <h3>PCA podaci sa šumom</h3>
+        <iframe src="{{ pca_plot }}" width="100%" height="600"></iframe>
+    {% endif %}
+
+    {% if svd_plot %}
+        <h3>SVD sa šumom</h3>
+        <iframe src="{{ svd_plot }}" width="100%" height="600"></iframe>
+    {% endif %}
+
+    {% if mMDS_plot %}
+        <h3>mMDS sa šumom</h3>
+        <iframe src="{{ mMDS_plot }}" width="100%" height="600"></iframe>
+    {% endif %}
+
+    {% if reduced_plot %}
+    <h2>Latentni Prostor</h2>
+    <iframe src="{{ reduced_plot }}" width="100%" height="500px"></iframe>
+    {% endif %}
+
+    
+
+
+
+</body>
+</html>
